@@ -12,6 +12,16 @@ def bubble_sort(arr, sorting_order):
     # Get number of elements in the list
     n = len(arr_result)
 
+    # Check n and whether all the items in the list are integer, before doing any sorting
+    if n>=10: # REQ-03: The list has 10 or more items.
+        return 1
+    if n==0: # REQ-04: The list is empty.
+        return 0
+    # REQ-05: Check whether every item in the list is integer.
+    for item in arr_result:
+        if (isinstance(item, int)==False):
+            return 2
+
     if n < 10:
         # Traverse through all array elements
         for i in range(n - 1):
